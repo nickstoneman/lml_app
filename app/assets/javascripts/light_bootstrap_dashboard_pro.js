@@ -5,7 +5,7 @@
 //= require light_bootstrap_dashboard_pro/bootstrap-datetimepicker
 //= require light_bootstrap_dashboard_pro/bootstrap-selectpicker
 //= require light_bootstrap_dashboard_pro/bootstrap-checkbox-radio-switch-tags
-//= require light_bootstrap_dashboard_pro/chartist.min
+// require light_bootstrap_dashboard_pro/chartist.min
 //= require light_bootstrap_dashboard_pro/bootstrap-notify
 //= require light_bootstrap_dashboard_pro/sweetalert2
 //= require light_bootstrap_dashboard_pro/jquery-jvectormap

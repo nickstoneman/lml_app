@@ -1,15 +1,14 @@
 <!doctype html>
 <html lang="en-us">
   <head>
+    <title><%= yield(:title) %> | Last Minute List</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <%= csrf_meta_tags %>
 
-    <title>Light Bootstrap Dashboard PRO by Creative Tim</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <%= favicon_link_tag 'light_bootstrap_dashboard_pro/favicon.ico', rel: 'icon', type: 'image/ico' %>
+    <%= favicon_link_tag 'favicon.ico', rel: 'icon', type: 'image/ico' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css' %>
