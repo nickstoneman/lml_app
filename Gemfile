@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0.rc1', '< 5.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+
+# The bcrypt Ruby gem provides a simple wrapper for safely handling passwords.
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
