@@ -1,5 +1,26 @@
 @import "light_bootstrap_dashboard_pro/bootstrap.min";
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
 //==============================================================================
 // All scss files are live inside the gem package in
 // /light_bootstrap_dashboard_pro/lib/sass
@@ -9,6 +30,7 @@
 	font-size: 1.2em;
 	font-family: 'Lato', sans-serif;
 }
+
 // Variables
 //------------------------------------------------------------------------------
 // General Colors

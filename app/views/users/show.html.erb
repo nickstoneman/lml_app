@@ -1,5 +1,6 @@
-<% content_for :features, "forms-wizard" %>
-<% content_for :class, "forms-wizard" %>
+<% provide(:title, 'Profile') %>
+<% content_for :features, "pages-user" %>
+<% content_for :class, "pages-user" %>
 <% content_for :stylesheet_head do %>
 	<%= stylesheet_link_tag 'light_bootstrap_dashboard_pro/demo', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
@@ -26,7 +27,7 @@
 
             <div class="user">
                 <div class="photo">
-									<%= image_tag("light_bootstrap_dashboard_pro/default-avatar.png") %>
+										<%= image_tag("light_bootstrap_dashboard_pro/default-avatar.png") %>
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
@@ -70,19 +71,19 @@
                     </div>
                 </li>
 
-                <li class="active">
-                    <a data-toggle="collapse" href="#formsExamples" aria-expanded="true">
+                <li>
+                    <a data-toggle="collapse" href="#formsExamples">
                         <i class="pe-7s-note2"></i>
                         <p>Forms
                            <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse in" id="formsExamples">
+                    <div class="collapse" id="formsExamples">
                         <ul class="nav">
-                            <li><a href="regular.html">Regular Forms</a></li>
-                            <li><a href="extended.html">Extended Forms</a></li>
-                            <li><a href="validation.html">Validation Forms</a></li>
-                            <li class="active"><a href="wizard.html">Wizard</a></li>
+                            <li><a href="../forms/regular.html">Regular Forms</a></li>
+                            <li><a href="../forms/extended.html">Extended Forms</a></li>
+                            <li><a href="../forms/validation.html">Validation Forms</a></li>
+                            <li><a href="../forms/wizard.html">Wizard</a></li>
                         </ul>
                     </div>
                 </li>
@@ -133,19 +134,19 @@
                     </a>
                 </li>
 
-                <li>
-                    <a data-toggle="collapse" href="#pagesExamples">
+                <li class="active">
+                    <a data-toggle="collapse" href="#pagesExamples" area-expanded="true">
                         <i class="pe-7s-gift"></i>
                         <p>Pages
                            <b class="caret"></b>
                         </p>
                     </a>
-                    <div class="collapse" id="pagesExamples">
+                    <div class="collapse in" id="pagesExamples">
                         <ul class="nav">
-                            <li><a href="../pages/login.html">Login Page</a></li>
-                            <li><a href="../pages/register.html">Register Page</a></li>
-                            <li><a href="../pages/lock.html">Lock Screen Page</a></li>
-                            <li><a href="../pages/user.html">User Page</a></li>
+                            <li><a href="login.html">Login Page</a></li>
+                            <li><a href="register.html">Register Page</a></li>
+                            <li><a href="lock.html">Lock Screen Page</a></li>
+                            <li class="active"><a href="user.html">User Page</a></li>
                             <li><a href="#">More coming soon...</a></li>
                         </ul>
                     </div>
@@ -164,7 +165,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Wizard</a>
+                    <a class="navbar-brand" href="#">Dashboard</a>
                 </div>
                 <div class="collapse navbar-collapse">
 
@@ -264,193 +265,131 @@
         </nav>
 
 
-
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="card card-wizard" id="wizardCard">
-                            <form id="wizardForm" method="" action="">
-
-                            <div class="header text-center">
-                                <h3 class="title">Awesome Wizard</h3>
-                                <p class="category">Split a complicated flow in multiple steps</p>
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Edit Profile</h4>
                             </div>
-
-            				<div class="content">
-            				    <ul class="nav">
-            						<li><a href="#tab1" data-toggle="tab">First Tab</a></li>
-            						<li><a href="#tab2" data-toggle="tab">Second Tab</a></li>
-            						<li><a href="#tab3" data-toggle="tab">Third Tab</a></li>
-            					</ul>
-
-            					<div class="tab-content">
-            					    <div class="tab-pane" id="tab1">
-                                        <h5 class="text-center">Please tell us more about yourself.</h5>
-                                        <div class="row">
-                                            <div class="col-md-5 col-md-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">First Name</label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="first_name"
-                                                           placeholder="ex: Mike"
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label class="control-label">Last Name</label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="last_name"
-                                                           required="true"
-                                                           placeholder="ex: Andrew"
-                                                    />
-                                                </div>
+                            <div class="content">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Company (disabled)</label>
+                                                <input type="text" class="form-control" disabled placeholder="Company" value="Creative Code Inc.">
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-10 col-md-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">Email<star>*</star></label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="email"
-                                                           email="true"
-                                                           placeholder="ex: hello@creative-tim.com"
-                                                    />
-                                                </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Username</label>
+                                                <input type="text" class="form-control" placeholder="Username" value="michael23">
                                             </div>
                                         </div>
-
-            					    </div>
-
-            					    <div class="tab-pane" id="tab2">
-                                        <h5 class="text-center">Please give us more details about your platform.</h5>
-                                        <div class="row">
-                                            <div class="col-md-10 col-md-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">Your Website<star>*</star></label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="website"
-                                                           url="true"
-                                                           placeholder="ex: http://www.creative-tim.com"
-                                                    />
-                                                </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" placeholder="Email">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="row">
-                                            <div class="col-md-5 col-md-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">Framework Type</label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="framework"
-                                                           placeholder="ex: http://www.creative-tim.com"
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label class="control-label">Language<star>*</star></label>
-
-                                                    <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
-                                                     -->
-
-                                                    <select name="cities" class="form-control">
-                                                        <option selected="" disabled="">- language -</option>
-                                                        <option value="ms">Bahasa Melayu</option>
-                                                        <option value="ca">Català</option>
-                                                        <option value="da">Dansk</option>
-                                                        <option value="de">Deutsch</option>
-                                                        <option value="en">English</option>
-                                                        <option value="es">Español</option>
-                                                        <option value="el">Eλληνικά</option>
-                                                        <option value="fr">Français</option>
-                                                        <option value="it">Italiano</option>
-                                                        <option value="hu">Magyar</option>
-                                                        <option value="nl">Nederlands</option>
-                                                        <option value="no">Norsk</option>
-                                                        <option value="pl">Polski</option>
-                                                        <option value="pt">Português</option>
-                                                        <option value="fi">Suomi</option>
-                                                        <option value="sv">Svenska</option>
-                                                        <option value="tr">Türkçe</option>
-                                                        <option value="is">Íslenska</option>
-                                                        <option value="cs">Čeština</option>
-                                                        <option value="ru">Русский</option>
-                                                        <option value="th">ภาษาไทย</option>
-                                                        <option value="zh">中文 (简体)</option>
-                                                        <option value="zh-TW">中文 (繁體)</option>
-                                                        <option value="ja">日本語</option>
-                                                        <option value="ko">한국어</option>
-                                                    </select>
-
-                                                </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>First Name</label>
+                                                <input type="text" class="form-control" placeholder="Company" value="Mike">
                                             </div>
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-5 col-md-offset-1">
-                                                <div class="form-group">
-                                                    <label class="control-label">Bootstrap Version</label>
-
-                                                    <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
-                                                     -->
-
-                                                    <select name="cities" class="form-control">
-                                                        <option selected="" disabled="">- version -</option>
-                                                        <option value="1.1">Bootstrap 1.1</option>
-                                                        <option value="2.0">Bootstrap 2.0</option>
-                                                        <option value="3.0">Bootstrap 3.0</option>
-                                                        <option value="4.0">Bootstrap 4.0(alpha)</option>
-                                                    </select>
-
-                                                </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Last Name</label>
+                                                <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
                                             </div>
-
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label class="control-label">Price</label>
-                                                    <input class="form-control"
-                                                           type="text"
-                                                           name="price"
-                                                           placeholder="ex: 19.00"
-                                                    />
-                                                </div>
-                                            </div>
-
                                         </div>
+                                    </div>
 
-            					    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
+                                            </div>
+                                        </div>
+                                    </div>
 
-            						<div class="tab-pane" id="tab3">
-            							<h2 class="text-center text-space">Yuhuuu! <br><small> Click on "<b>Finish</b>" to join our community</small></h2>
-            					    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>City</label>
+                                                <input type="text" class="form-control" placeholder="City" value="Mike">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Country</label>
+                                                <input type="text" class="form-control" placeholder="Country" value="Andrew">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Postal Code</label>
+                                                <input type="number" class="form-control" placeholder="ZIP Code">
+                                            </div>
+                                        </div>
+                                    </div>
 
-            					</div>
-            				</div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>About Me</label>
+                                                <textarea rows="5" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
 
-            				<div class="footer">
-                                <button type="button" class="btn btn-default btn-fill btn-wd btn-back pull-left">Back</button>
-
-                                <button type="button" class="btn btn-info btn-fill btn-wd btn-next pull-right">Next</button>
-                                <button type="button" class="btn btn-info btn-fill btn-wd btn-finish pull-right" onclick="onFinishWizard()">Finish</button>
-
-                                <div class="clearfix"></div>
-            				</div>
-                            </form>
-
+                                    <button type="submit" class="btn btn-info btn-fill pull-right">Update Profile</button>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <div class="card card-user">
+                            <div class="image">
+															<%= image_tag("light_bootstrap_dashboard_pro/full-screen-image-3.jpg", alt: "...") %>
+                            </div>
+                            <div class="content">
+                                <div class="author">
+                                     <a href="#">
+																			 <%= image_tag("light_bootstrap_dashboard_pro/default-avatar.png", class: "avatar border-gray", alt: "...") %>
 
+                                      <h4 class="title"><%= @user.name %><br />
+                                         <small><%= @user.email %></small>
+                                      </h4>
+                                    </a>
+                                </div>
+                                <p class="description text-center"> "Lamborghini Mercy <br>
+                                                    Your chick she so thirsty <br>
+                                                    I'm in that two seat Lambo"
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="text-center">
+                                <button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
+                                <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
+                                <button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+
 
         <footer class="footer">
             <div class="container-fluid">
@@ -483,7 +422,6 @@
                 </p>
             </div>
         </footer>
-
 
     </div>
 </div>
