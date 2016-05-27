@@ -1,6 +1,8 @@
-<%= render :layout => "layouts/base" do %>
-  <%= render "layouts/navbar" %>
+<%= render :layout => 'layouts/base' do %>
+  <%= render 'layouts/navbar' unless @disable_nav %>
   <%= yield %>
-  <%= render "layouts/footer" %>
+  <%= render 'layouts/footer' unless @disable_footer %>
   <%= debug(params) if Rails.env.development? %>
 <% end %>
+
+

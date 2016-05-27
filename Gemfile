@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
 
 source ENV['LIGHT_BOOT_DASHBOARD_PRO'] do
-  gem 'light_bootstrap_dashboard_pro', '>= 1.2.0.2'
+  gem 'light_bootstrap_dashboard_pro', '>= 1.2.0.4'
 end
 
 # Use Capistrano for deployment

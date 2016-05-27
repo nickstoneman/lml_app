@@ -1,5 +1,6 @@
 class LoginPageController < ApplicationController
 	layout '_base'
-	def login		
+	def login
+				
 	end
 end

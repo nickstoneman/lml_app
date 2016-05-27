@@ -13,7 +13,7 @@
 //= require light_bootstrap_dashboard_pro/bootstrap-table
 //= require light_bootstrap_dashboard_pro/fullcalendar.min
 //= require light_bootstrap_dashboard_pro/light-bootstrap-dashboard
-//= require light_bootstrap_dashboard_pro/init
+//= require light_bootstrap_dashboard_pro/app-init
 //
 // Dynamic load the javascript init based on features specified from view
 // Combine the best practice to handle javascript invocation in rails
