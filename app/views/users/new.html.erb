@@ -83,34 +83,34 @@
                         </div>
 
                     </div>
+                    
                     <div class="col-md-4 col-md-offset-s1">
                         <form method="#" action="#">
                             <div class="card card-plain">
                                 <div class="content">
 
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" placeholder="Password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" placeholder="Password Confirmation" class="form-control">
-                                    </div>
+                                    <%= simple_form_for @user do |f| %>
+                                      <%= f.text_field :name, :class => "form-group form-control", :placeholder => "Name" %>
 
-                                </div>
-                                <div class="footer text-center">
-                                    <button type="submit" class="btn btn-fill btn-neutral btn-wd">Create Free Account</button>
+                                      <%= f.email_field :email, :class => "form-group form-control", :placeholder => "Email" %>
+
+                                      <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
+
+                                      <%= f.password_field :password_confirmation, :class => "form-group form-control", :placeholder => "Password Confirmation" %>
+                                      <div class="text-center">
+                                      <%= f.submit "Create free account", wrapper_html: { class: 'footer' }, class: "btn btn-fill btn-neutral btn-wd" %>
+                                      </div>
+                                    <% end %>
+
                                 </div>
                             </div>
                         </form>
-
                     </div>
+                
                 </div>
+            
             </div>
+        
         </div>
 
     	<footer class="footer footer-transparent">
