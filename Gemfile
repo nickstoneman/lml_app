@@ -44,6 +44,7 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
   gem 'guard-minitest'
+  gem 'binding_of_caller'
 end
 
 group :development do
