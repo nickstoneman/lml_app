@@ -20,11 +20,26 @@ $gray-medium-light: #eaeaea;
   @include box_sizing;
 }
 
+#error_explanation {
+  color: red;
+  ul {
+    color: white;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: 1px, bold;
+  }
+}
 
 //==============================================================================
 // All scss files are live inside the gem package in
 // /light_bootstrap_dashboard_pro/lib/sass
 // You can customize the variables and typography below
+
 
 
 
