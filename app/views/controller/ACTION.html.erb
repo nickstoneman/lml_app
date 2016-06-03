@@ -1,5 +1,5 @@
-<% content_for :features, "pages-register" %>
-<% content_for :class, "pages-register" %>
+<% content_for :features, "components-notifications" %>
+<% content_for :class, "components-notifications" %>
 <% content_for :stylesheet_head do %>
 	<%= stylesheet_link_tag 'light_bootstrap_dashboard_pro/demo', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
@@ -7,125 +7,383 @@
 	<%= javascript_include_tag 'light_bootstrap_dashboard_pro/demo', 'data-turbolinks-track' => true %>
 <% end %>
 
-<nav class="navbar navbar-transparent navbar-absolute">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse">
+<div class="wrapper">
+    <div class="sidebar" data-color="orange" data-image='<%= image_path("light_bootstrap_dashboard_pro/full-screen-image-3.jpg") %>'>
+        <!--
 
-            <ul class="nav navbar-nav navbar-right">
+            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+            Tip 2: you can also add an image using data-image tag
+
+        -->
+
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="logo-text">
+                Creative Tim
+            </a>
+        </div>
+
+    	<div class="sidebar-wrapper">
+
+            <div class="user">
+                <div class="photo">
+										<%= image_tag("light_bootstrap_dashboard_pro/default-avatar.png") %>
+                </div>
+                <div class="info">
+                    <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                        Tania Andrew
+                        <b class="caret"></b>
+                    </a>
+                    <div class="collapse" id="collapseExample">
+                        <ul class="nav">
+                            <li><a href="#">My Profile</a></li>
+                            <li><a href="#">Edit Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav">
                 <li>
-                   <a href="login.html">
-                        Looking to login?
+                    <a href="../dashboard.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Dashboard</p>
                     </a>
                 </li>
+                <li class="active">
+                    <a data-toggle="collapse" href="#componentsExamples" aria-expanded="true">
+                        <i class="pe-7s-plugin"></i>
+                        <p>Components
+                           <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse in" id="componentsExamples">
+                        <ul class="nav">
+                            <li><a href="buttons.html">Buttons</a></li>
+                            <li><a href="grid.html">Grid System</a></li>
+                            <li><a href="icons.html">Icons</a></li>
+                            <li class="active"><a href="notifications.html">Notifications</a></li>
+                            <li><a href="panels.html">Panels</a></li>
+                            <li><a href="sweet-alert.html">Sweet Alert</a></li>
+                            <li><a href="typography.html">Typography</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#formsExamples">
+                        <i class="pe-7s-note2"></i>
+                        <p>Forms
+                           <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="formsExamples">
+                        <ul class="nav">
+                            <li><a href="../forms/regular.html">Regular Forms</a></li>
+                            <li><a href="../forms/extended.html">Extended Forms</a></li>
+                            <li><a href="../forms/validation.html">Validation Forms</a></li>
+                            <li><a href="../forms/wizard.html">Wizard</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#tablesExamples">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Tables
+                           <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="tablesExamples">
+                        <ul class="nav">
+                            <li><a href="../tables/regular.html">Regular Tables</a></li>
+                            <li><a href="../tables/extended.html">Extended Tables</a></li>
+                            <li><a href="../tables/datatable.html">Data Tables</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#mapsExamples">
+                        <i class="pe-7s-map-marker"></i>
+                        <p>Maps
+                           <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="mapsExamples">
+                        <ul class="nav">
+                            <li><a href="../maps/google.html">Google Maps</a></li>
+                            <li><a href="../maps/vector.html">Vector Maps</a></li>
+                            <li><a href="../maps/fullscreen.html">Full Screen Map</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="../charts.html">
+                        <i class="pe-7s-graph1"></i>
+                        <p>Charts</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../calendar.html">
+                        <i class="pe-7s-date"></i>
+                        <p>Calendar</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" href="#pagesExamples">
+                        <i class="pe-7s-gift"></i>
+                        <p>Pages
+                           <b class="caret"></b>
+                        </p>
+                    </a>
+                    <div class="collapse" id="pagesExamples">
+                        <ul class="nav">
+                            <li><a href="../pages/login.html">Login Page</a></li>
+                            <li><a href="../pages/register.html">Register Page</a></li>
+                            <li><a href="../pages/lock.html">Lock Screen Page</a></li>
+                            <li><a href="../pages/user.html">User Page</a></li>
+                            <li><a href="#">More coming soon...</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
-        </div>
+    	</div>
     </div>
-</nav>
 
-<div class="wrapper wrapper-full-page">
-    <div class="full-page register-page" data-color="orange" data-image='<%= image_path("light_bootstrap_dashboard_pro/full-screen-image-2.jpg") %>'>
+    <div class="main-panel">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Notifications</a>
+                </div>
+                <div class="collapse navbar-collapse">
 
-    <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+                    <form class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                        </div>
+                    </form>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="../charts.html">
+                                <i class="fa fa-line-chart"></i>
+                                <p>Stats</p>
+                            </a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-gavel"></i>
+                                <p class="hidden-md hidden-lg">
+                                    Actions
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Create New Post</a></li>
+                                <li><a href="#">Manage Something</a></li>
+                                <li><a href="#">Do Nothing</a></li>
+                                <li><a href="#">Submit to live</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Another Action</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="notification">5</span>
+                                <p class="hidden-md hidden-lg">
+    								Notifications
+    								<b class="caret"></b>
+    							</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Notification 1</a></li>
+                                <li><a href="#">Notification 2</a></li>
+                                <li><a href="#">Notification 3</a></li>
+                                <li><a href="#">Notification 4</a></li>
+                                <li><a href="#">Another notification</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown dropdown-with-icons">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-list"></i>
+                                <p class="hidden-md hidden-lg">
+    								More
+    								<b class="caret"></b>
+    							</p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-with-icons">
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-mail"></i> Messages
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-help1"></i> Help Center
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-tools"></i> Settings
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <i class="pe-7s-lock"></i> Lock Screen
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-danger">
+                                        <i class="pe-7s-close-circle"></i>
+                                        Log out
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
         <div class="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="header-text">
-                            <h2>Light Bootstrap Dashboard PRO</h2>
-                            <h4>Register for free and experience the dashboard today</h4>
-                            <hr />
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-md-offset-2">
-                        <div class="media">
-                            <div class="media-left">
-                                <div class="icon">
-                                    <i class="pe-7s-user"></i>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <h4>Free Account</h4>
-                                Here you can write a feature description for your dashboard, let the users know what is the value that you give them.
-                            </div>
-                        </div>
-
-                        <div class="media">
-                            <div class="media-left">
-                                <div class="icon">
-                                    <i class="pe-7s-graph1"></i>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <h4>Awesome Performances</h4>
-                                Here you can write a feature description for your dashboard, let the users know what is the value that you give them.
-
-                            </div>
-                        </div>
-
-                        <div class="media">
-                            <div class="media-left">
-                                <div class="icon">
-                                    <i class="pe-7s-headphones"></i>
-                                </div>
-                            </div>
-                            <div class="media-body">
-                                <h4>Global Support</h4>
-                                Here you can write a feature description for your dashboard, let the users know what is the value that you give them.
-
-                            </div>
-                        </div>
+            <div class="container-fluid">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Notifications</h4>
+                        <p class="category">Handcrafted by our friend <a target="_blank" href="https://github.com/mouse0270">Robert McIntosh</a>. Please checkout the <a href="http://bootstrap-notify.remabledesigns.com/" target="_blank">full documentation.</a></p>
 
                     </div>
-                    <div class="col-md-4 col-md-offset-s1">
-                        <form method="#" action="#">
-                            <div class="card card-plain">
-                                <div class="content">
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Your First Name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Your Last Name" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Company" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="email" placeholder="Enter email" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" placeholder="Password" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" placeholder="Password Confirmation" class="form-control">
-                                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Notifications Style</h5>
+                                <div class="alert alert-info">
+                                    <span>This is a plain notification</span>
                                 </div>
-                                <div class="footer text-center">
-                                    <button type="submit" class="btn btn-fill btn-neutral btn-wd">Create Free Account</button>
+                                <div class="alert alert-info">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span>This is a notification with close button.</span>
+                                </div>
+                                <div class="alert alert-info alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span data-notify="icon" class="pe-7s-bell"></span>
+                                    <span data-notify="message">This is a notification with close button and icon.</span>
+                                </div>
+                                <div class="alert alert-info alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span data-notify="icon" class="pe-7s-bell"></span>
+                                    <span data-notify="message">This is a notification with close button and icon and have many lines. You can see that the icon and the close button are always vertically aligned. This is a beautiful notification. So you don't have to worry about the style.</span>
                                 </div>
                             </div>
-                        </form>
-
+                            <div class="col-md-6">
+                                <h5>Notification States</h5>
+                                <div class="alert alert-info">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Info - </b> This is a regular notification made with ".alert-info"</span>
+                                </div>
+                                <div class="alert alert-success">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Success - </b> This is a regular notification made with ".alert-success"</span>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Warning - </b> This is a regular notification made with ".alert-warning"</span>
+                                </div>
+                                <div class="alert alert-danger">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span><b> Danger - </b> This is a regular notification made with ".alert-danger"</span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="places-buttons">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 text-center">
+                                    <h5>Notifications Places
+                                        <p class="category">Click to view notifications</p>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-3">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','left')">Top Left</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','center')">Top Center</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('top','right')">Top Right</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-3">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','left')">Bottom Left</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','center')">Bottom Center</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-default btn-block" onclick="demo.showNotification('bottom','right')">Bottom Right</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-    	<footer class="footer footer-transparent">
-            <div class="container">
-                <p class="copyright text-center">
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Company
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                               Blog
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
                     &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
                 </p>
             </div>
         </footer>
 
     </div>
-
 </div>

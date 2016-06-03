@@ -1,6 +1,7 @@
 <% provide(:title, 'Signup') %>
-<% content_for :features, "pages-register" %>
-<% content_for :class, "pages-register" %>
+<% content_for :features, "forms-validation pages-register" %>
+<% content_for :class, "forms-validation pages-register" %>
+
 <% content_for :stylesheet_head do %>
 	<%= stylesheet_link_tag 'light_bootstrap_dashboard_pro/demo', media: 'all', 'data-turbolinks-track' => true %>
 <% end %>
@@ -85,15 +86,14 @@
                     </div>
 
                     <div class="col-md-4 col-md-offset-s1">
-                        <form method="#" action="#">
                             <div class="card card-plain">
                                 <div class="content">
-
+                                <div class="row">
                                     <%= simple_form_for @user do |f| %>
-                                    <%= render 'shared/error_messages' %>
-                                      <%= f.text_field :name, :class => "form-group form-control", :placeholder => "Name" %>
+                                      <%= render 'shared/error_messages' %>
+                                      <%= f.text_field :name, :class => "form-control form-group", :placeholder => "Name" %>
 
-                                      <%= f.text_field :email, :class => "form-group form-control", :placeholder => "Email" %>
+                                      <%= f.text_field :email, :class => "form-control form-group", :placeholder => "Email" %>
 
                                       <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
 
@@ -103,9 +103,9 @@
                                       </div>
                                     <% end %>
 
+                                    </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 
                 </div>
@@ -120,9 +120,10 @@
                     &copy; 2016 <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
                 </p>
             </div>
-        </footer>
+      </footer>
 
     </div>
 
 </div>
+
 <%= debug(params) if Rails.env.development? %>

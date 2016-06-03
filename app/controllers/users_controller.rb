@@ -13,9 +13,10 @@ class UsersController < ApplicationController
 
   def create
   	# @disable_nav = true
-  	@user = User.new(params[:user])
+  	@user = User.new(user_params)
     if @user.save
-      # Handle sucessful save
+      flash[:success] = "Welcome to Last Minute List!"
+      redirect_to @user
     else
       render 'new'
     end
