@@ -20,11 +20,13 @@
     <%= yield :javascript_head %>
 
     <%= javascript_include_tag 'light_bootstrap_dashboard_pro/app-init', 'data-turbolinks-track' => true %>
+    
   </head>
   <body class="<%= yield :class %>" data-features="<%= yield :features %>">
+    <!-- Flash Messages -->
     <div class="container">
      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
     </div>
     <%= yield %>
