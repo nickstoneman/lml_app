@@ -35,8 +35,14 @@
     <div class="full-page login-page" data-color="default" data-image='<%= image_path("light_bootstrap_dashboard_pro/full-screen-image-1.jpg") %>'>
 
     <!--   you can change the color of the filter page using: data-color="blue | azure | green | orange | red | purple" -->
+
+
+
         <div class="content">
             <div class="container">
+                <% flash.each do |message_type, message| %>
+        			<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      			<% end %>
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
@@ -47,19 +53,12 @@
                                 <%= simple_form_for(:session, url: login_path) do |f| %>
                              		<!-- pe render 'shared/error_messages' %> -->
 							    	<%= f.text_field :email, :class => "form-control form-group", :placeholder => "Email" %>
-
 							        <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
 
 							    	<small>New user? <%= link_to "Create account here.", signup_path %></small>
-                                    <div class="form-group">
-                                        <label class="checkbox">
-                                            <input type="checkbox" data-toggle="checkbox" value="">
-                                            Subscribe to newsletter
-                                        </label>
-                                    </div>
                                 </div>
 	                                <div class="text-center">
-	                                <%= f.button :submit, "Join now", wrapper_html: { class: 'footer' }, class: "btn btn-fill btn-warning btn-wd" %>
+	                                <%= f.button :submit, "Sign In", wrapper_html: { class: 'footer' }, class: "btn btn-fill btn-warning btn-wd" %>
 	                                </div>
                                 <% end %>
                             </div>
@@ -68,9 +67,7 @@
                 </div>
             </div>
         </div>
-
     <%= render "layouts/footer" %>
-
     </div>
-
 </div>
+<%= debug(params) if Rails.env.development? %>
