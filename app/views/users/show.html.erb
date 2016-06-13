@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="orange" data-image='<%= image_path("light_bootstrap_dashboard_pro/full-screen-image-3.jpg") %>'>
+    <div class="sidebar" data-color="azure" data-image='<%= image_path("light_bootstrap_dashboard_pro/full-screen-image-3.jpg") %>'>
         <!--
 
             Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
@@ -18,9 +18,7 @@
         -->
 
         <div class="logo">
-            <a href="http://www.creative-tim.com" class="logo-text">
-                Creative Tim
-            </a>
+            <%= link_to "LAST MINUTE LIST", root_path, class: "logo-text" %>
         </div>
 
     	<div class="sidebar-wrapper">
@@ -31,11 +29,18 @@
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                        Tania Andrew
+                        <%= @user.name %>
                         <b class="caret"></b>
                     </a>
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
+                            <li><%= link_to "Profile", current_user %></li>
+                            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+
+                            
+                           
+
+
                             <li><a href="#">My Profile</a></li>
                             <li><a href="#">Edit Profile</a></li>
                             <li><a href="#">Settings</a></li>
