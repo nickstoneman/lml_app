@@ -22,10 +22,8 @@
       <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "About", about_path %></li>
           <li><%= link_to "Contact", contact_path %></li>
-          <li><%= link_to "Login", login_path, :class => "nav-btn-border" %></li>
-          <li><%= link_to "Signup", signup_path %></li>
-          <li><a class="nav-btn-border" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
-          <li><a class="nav-btn" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></li>
+          <li><a class="nav-btn-border" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Sign in</a></li>
+          <li><a class="nav-btn" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Create account</a></li>
           <li><%= link_to "Sign In", login_path, :class => "nav-btn-border" %></li>
           <li><%= link_to "Create Account", signup_path %></li>
           <!-- For logged in users -->
