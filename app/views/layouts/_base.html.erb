@@ -25,7 +25,7 @@
   <body class="<%= yield :class %>" data-features="<%= yield :features %>">
     <!-- Flash Messages -->
     <div class="container">
-     <% flash.each do |message_type, message| %>
+      <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
     </div>

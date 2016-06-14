@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   	# @disable_nav = true
   	@user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to Last Minute List!"
       redirect_to @user
     else
