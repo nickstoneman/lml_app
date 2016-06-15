@@ -51,7 +51,7 @@
                                 <div class="content">
                                 <!-- Start of the form -->
                                 <%= simple_form_for(:session, url: login_path) do |f| %>
-                             		<!-- pe render 'shared/error_messages' %> -->
+                                <!-- rnder 'shared/error_messages' goes here but needs validation to work -->
 							    	<%= f.text_field :email, :class => "form-control form-group", :placeholder => "Email" %>
 							        <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
 

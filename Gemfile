@@ -30,9 +30,11 @@ gem 'jbuilder', '~> 2.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'simple_form'
 
-source ENV['LIGHT_BOOT_DASHBOARD_PRO'] do
-  gem 'light_bootstrap_dashboard_pro', '>= 1.2.0.5'
-end
+# source ENV['LIGHT_BOOT_DASHBOARD_PRO'] do
+#   gem 'light_bootstrap_dashboard_pro', '>= 1.2.0.5'
+# end
+
+gem 'light_bootstrap_dashboard_pro', '1.2.0.5', :path => 'lib/light_bootstrap_dashboard_pro'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
