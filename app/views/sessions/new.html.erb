@@ -40,7 +40,7 @@
 
         <div class="content">
             <div class="container">
-                <% flash.each do |message_type, message| %>
+              <% flash.each do |message_type, message| %>
         			<%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       			<% end %>
                 <div class="row">
@@ -52,15 +52,20 @@
                                 <!-- Start of the form -->
                                 <%= simple_form_for(:session, url: login_path) do |f| %>
                                 <!-- rnder 'shared/error_messages' goes here but needs validation to work -->
-							    	<%= f.text_field :email, :class => "form-control form-group", :placeholder => "Email" %>
-							        <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
+            							    	<%= f.text_field :email, :class => "form-control form-group", :placeholder => "Email" %>
+            							        <%= f.password_field :password, :class => "form-group form-control", :placeholder => "Password" %>
 
-							    	<small>New user? <%= link_to "Create account here.", signup_path %></small>
+                                    <%= f.label :remember_me, class: "checkbox inline" do %>
+                                        <%= f.check_box :remember_me %>
+                                        <span>Remember me on this computer</span>
+                                    <% end %>
+	                               
+                                   <div class="text-center">
+	                                   <%= f.button :submit, "Sign In", wrapper_html: { class: 'footer' }, class: "btn btn-fill btn-warning btn-wd" %><br>
+                                        <small>New user? <%= link_to "Create account here.", signup_path %></small>
+	                                   </div>
+                                  <% end %>
                                 </div>
-	                                <div class="text-center">
-	                                <%= f.button :submit, "Sign In", wrapper_html: { class: 'footer' }, class: "btn btn-fill btn-warning btn-wd" %>
-	                                </div>
-                                <% end %>
                             </div>
 
                     </div>
